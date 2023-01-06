@@ -5,6 +5,7 @@ import react from "@vitejs/plugin-react";
 const rollupOptions = {
   external: ["react"],
   output: {
+    dir: "lib",
     globals: {
       react: "React",
     },
@@ -17,12 +18,12 @@ export default defineConfig({
     rollupOptions,
     minify: false,
     lib: {
-      entry: resolve(__dirname, "main.ts"),
+      entry: resolve(__dirname, "index.ts"),
       name: "MyLib",
       // the proper extensions will be added
       fileName: "my-lib",
       // 导出模块格式
-      formats: ["esm", "umd", "iife"],
+      formats: ["es", "umd", "iife"],
     },
   },
 });
